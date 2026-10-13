@@ -26,6 +26,74 @@ a{color:var(--accent)}a.btn{display:inline-flex;align-items:center;justify-conte
 @media(max-width:1000px){.hero{grid-template-columns:1fr}.main{grid-template-columns:1fr}.catalog{position:relative;top:auto;max-height:none}.filtergrid{grid-template-columns:1fr 1fr}.editor{grid-template-columns:1fr}.overviewGrid{grid-template-columns:1fr}}
 @media(max-width:650px){.resourceGrid{grid-template-columns:1fr}.app{padding:14px}.top{align-items:flex-start;flex-direction:column}.filtergrid{grid-template-columns:1fr}.challengeGrid{grid-template-columns:1fr}.heroMain{padding:20px}.section{padding:16px}.catalog{padding:10px}.pillbar{display:none}}
 </style>
+<style id="ui-v3-theme">
+/* Arduino Lab Kids V3 — capa visual no destructiva sobre el catálogo original */
+:root{--bg:#07121e;--panel:#101f31;--panel2:#14263b;--line:#2a435a;--text:#f2f7ff;--muted:#abc1d4;--accent:#64e0dc;--accent2:#8791ff;--shadow:0 16px 42px #0003;--r:18px}
+body{background:radial-gradient(circle at 92% 0%,rgba(98,224,220,.09),transparent 36%),#07121e;color:var(--text)}
+.app{max-width:1480px;padding:0 28px 32px}
+.top{position:sticky;top:0;z-index:100;min-height:78px;margin:0 -28px 24px;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #294159;background:rgba(8,20,33,.97);backdrop-filter:blur(18px)}
+.brand-home{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--text);border-radius:13px;padding:5px 7px}
+.brand-home:hover{background:#19314b}.brand-home:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.brand-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;color:#062638;background:linear-gradient(135deg,#71e8da,#6a8dff);font-size:27px;box-shadow:0 7px 22px #52bbcf34}
+.brand-title{display:block;font-size:20px;font-weight:850;letter-spacing:-.7px;line-height:1.1}.brand-sub{display:block;color:#a6bacd;font-size:12px;margin-top:5px}
+.site-nav{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.site-nav a{display:flex;align-items:center;gap:8px;min-height:42px;padding:10px 16px;color:#bfd3e6;border:1px solid transparent;border-radius:11px;font-size:14px;font-weight:760;text-decoration:none;white-space:nowrap}.site-nav a:hover{color:#fff;background:#183047}.site-nav a[aria-current="page"]{color:#061d28;background:var(--accent);border-color:var(--accent)}
+.nav-count{font-size:11px;font-weight:900;background:#263f57;color:#c5e6ed;border-radius:20px;padding:2px 6px}.site-nav a[aria-current="page"] .nav-count{background:#145969;color:#fff}
+.skip-link{position:fixed;left:15px;top:-100px;background:#fff;color:#082033;padding:11px 17px;z-index:999;border-radius:8px}.skip-link:focus{top:12px}
+:where(button,a,input,select,textarea,[tabindex]):focus-visible{outline:3px solid #ffe494!important;outline-offset:3px}
+button{touch-action:manipulation}button[disabled]{opacity:.45;cursor:not-allowed}
+[data-view="home"] .hero,[data-view="home"] #simulatorsHome,[data-view="home"] .filters,[data-view="home"] .inventory,[data-view="home"] .main,[data-view="home"] .quickrow{display:none!important}
+[data-view="explore"] .hero,[data-view="explore"] #simulatorsHome{display:none!important}
+[data-view="explore"] .main{grid-template-columns:1fr}[data-view="explore"] .detail{display:none!important}[data-view="explore"] .catalog{position:static;max-height:none;overflow:visible}
+[data-view="project"] .hero,[data-view="project"] #simulatorsHome,[data-view="project"] .filters,[data-view="project"] .inventory,[data-view="project"] .quickrow{display:none!important}
+[data-view="project"] .main{grid-template-columns:1fr}[data-view="project"] .catalog{display:none!important}
+[data-view="saved"] .hero,[data-view="saved"] #simulatorsHome,[data-view="saved"] .filters,[data-view="saved"] .inventory,[data-view="saved"] .main,[data-view="saved"] .quickrow{display:none!important}
+[data-view="home"] #homeView,[data-view="saved"] #savedHub{display:block}
+#homeView,#savedHub{display:none;animation:fadeUp .25s ease-out}
+@keyframes fadeUp{from{opacity:.65;transform:translateY(7px)}to{opacity:1;transform:none}}
+.home-hero{display:grid;grid-template-columns:1.45fr .85fr;gap:22px;margin:10px 0 34px;align-items:stretch}
+.hero-v3{background:linear-gradient(115deg,#163a50,#142442 68%,#231d4b);border:1px solid #3c6374;border-radius:26px;padding:42px;position:relative;overflow:hidden;min-height:315px}
+.hero-v3:after{content:"";position:absolute;right:-74px;top:-118px;width:290px;height:290px;border:1px solid #7fe5d34d;border-radius:50%;box-shadow:0 0 0 35px #6dddd212,0 0 0 80px #6dddd20b;pointer-events:none}
+.eyebrow{font-size:12px;font-weight:850;letter-spacing:1.7px;text-transform:uppercase;color:#8febdb;display:block;margin-bottom:16px}.hero-v3 h1{font-size:clamp(34px,3.9vw,62px);line-height:1.07;margin:0 0 18px;letter-spacing:-2.6px;max-width:750px}.hero-v3 p{max-width:570px;font-size:17px;color:#c4dce8;line-height:1.6;margin:0 0 24px}
+.v3-cta{display:inline-flex;align-items:center;gap:10px;justify-content:center;min-height:46px;padding:12px 20px;border-radius:12px;border:1px solid #4e697a;background:#172c44;color:#ecf7ff;text-decoration:none;font-weight:800;cursor:pointer;font-size:14px}
+.v3-cta.primary{background:#75e8dc;color:#07323c;border-color:#75e8dc}.v3-cta:hover{filter:brightness(1.1);transform:translateY(-1px)}.cta-row{display:flex;gap:10px;flex-wrap:wrap}
+.hero-progress{background:#102439;border:1px solid #31556b;border-radius:25px;padding:27px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:315px}
+.progress-numeral{font-size:70px;letter-spacing:-5px;font-weight:900;color:#baf6e9;line-height:1}.hero-progress h2{font-size:23px;margin:0}.hero-progress p{font-size:14px;color:#b1cbd7;line-height:1.5;margin:4px 0}.progressbar.v3-progress{height:12px;background:#233d52}.v3-meter-note{display:flex;justify-content:space-between;color:#b1cbd7;font-size:12px}
+.home-section{margin:0 0 34px}.section-heading{display:flex;justify-content:space-between;gap:14px;align-items:end;margin:0 0 17px}.section-heading h2{font-size:26px;line-height:1.16;letter-spacing:-.8px;margin:0}.section-heading p{color:var(--muted);margin:6px 0 0;font-size:14px}.text-link{color:#8debe2;text-decoration:none;font-weight:770}.text-link:hover{text-decoration:underline}
+.v3-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.v3-categories{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.v3-card{display:flex;flex-direction:column;gap:10px;text-align:left;background:#102236;border:1px solid #2a485f;border-radius:19px;overflow:hidden;color:var(--text);padding:0;text-decoration:none;cursor:pointer;min-height:245px}.v3-card:hover{transform:translateY(-3px);border-color:#68dbd0;box-shadow:0 16px 30px #0003}.v3-card:focus-visible{outline-offset:4px}
+.v3-visual{position:relative;height:132px;background:radial-gradient(circle at 74% 26%,#2b55713f,transparent 50%),linear-gradient(135deg,#163c50,#1b2950);display:grid;place-items:center;overflow:hidden}.v3-visual svg{width:min(82%,250px);height:120px;filter:drop-shadow(0 12px 9px #0004)}.v3-card-body{display:grid;gap:9px;padding:1px 17px 17px;flex:1}.v3-card b{font-size:17px}.v3-card .tiny{font-size:12px;color:#abc5d6}.v3-mini-tags{display:flex;gap:6px;flex-wrap:wrap}.v3-mini-tags span{font-size:11px;background:#254158;color:#c6dfef;border-radius:7px;padding:4px 7px}
+.v3-category{display:flex;flex-direction:column;text-align:left;gap:14px;padding:20px;border:1px solid #29485c;border-radius:19px;background:#102236;color:#f5faff;cursor:pointer;min-height:150px}.v3-category:hover{background:#18344d;border-color:#69cde0}.v3-category .cat-icon{font-size:27px;width:48px;height:48px;display:grid;place-items:center;background:#23475c;border-radius:15px}.v3-category b{font-size:16px}.v3-category small{color:#afc5d4}
+.explore-intro,.saved-intro{padding:24px 28px;margin-bottom:18px;background:linear-gradient(100deg,#163149,#122338);border:1px solid #305268;border-radius:22px}.explore-intro h1,.saved-intro h1{font-size:clamp(25px,3vw,36px);margin:0 0 7px;letter-spacing:-1px}.explore-intro p,.saved-intro p{color:#b6cbda;margin:0;line-height:1.5}
+[data-view="explore"] .filters{margin:0 0 13px}[data-view="explore"] .catalog{background:transparent;border:0;box-shadow:none;padding:4px}[data-view="explore"] .projectList{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+[data-view="explore"] .projectCard{display:flex;flex-direction:column;min-width:0;min-height:270px;padding:0;overflow:hidden;background:#102236;transition:.2s;border-radius:19px}.projectCard .v3-visual{height:128px}.projectCard .project-info{padding:15px;display:flex;flex-direction:column;gap:9px;flex:1}.projectCard .pcTop{align-items:start}.projectCard .pcTitle{font-size:16px}.projectCard .pcDesc{font-size:13px;color:#b2c8d9;line-height:1.42;flex:1}.projectCard .pc-action{font-size:13px;font-weight:800;color:#79e9dd;display:flex;justify-content:space-between;align-items:center;margin-top:2px}.projectCard .badges{margin-top:0}.projectCard .badge{font-size:10px}
+#exploreIntro{display:none}[data-view="explore"] #exploreIntro{display:block}
+.project-head{margin-bottom:16px;display:grid;gap:15px}.crumbs{display:flex;align-items:center;gap:9px;color:#a8c8d9;flex-wrap:wrap;font-size:13px}.crumbs a{color:#b9d5e4;text-decoration:none}.crumbs a:hover{color:#8debe2;text-decoration:underline}.crumbs span[aria-current]{color:#fff;font-weight:800}
+.project-head-card{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:25px;align-items:center;padding:23px 26px;border:1px solid #34546a;background:linear-gradient(125deg,#142f41,#172c4c);border-radius:22px}.project-head-card h1{font-size:clamp(28px,3vw,41px);line-height:1.12;letter-spacing:-1px;margin:9px 0}.project-head-card p{margin:0;color:#b4cee0;line-height:1.45}.project-head-card .v3-visual{background:transparent;height:150px}.project-head-card .v3-visual svg{height:148px;width:100%;max-width:280px}.project-head .meta-line{display:flex;flex-wrap:wrap;gap:7px}.meta-line .m-tag{background:#203e56;border:1px solid #37576f;padding:5px 10px;border-radius:100px;font-size:12px;font-weight:700;color:#cde4ed}
+.project-nav-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+#tabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;padding:10px;background:#0d2032;box-shadow:none;border:1px solid #2b455c;position:sticky;top:79px;z-index:60}
+#tabs .tab{display:flex;align-items:center;justify-content:center;text-align:center;min-width:0;min-height:45px;padding:8px 3px;border-radius:10px;font-weight:750;font-size:12px;line-height:1.25;transition:.15s;color:#bfd4df;background:transparent;white-space:normal}
+#tabs .tab.active{background:#77e2d9;color:#06343d;border-color:#77e2d9}#tabs .tab:hover:not(.active){background:#1b3950;color:#fff}
+#tabs .tab[data-tab="saved"]{display:none}
+.v3-stage-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 28px;padding:16px 18px;border:1px solid #325069;border-radius:16px;background:#13273b}
+.v3-stage-foot strong{font-size:13px;color:#cde7eb}.v3-stage-foot .stage-actions{display:flex;gap:9px;flex-wrap:wrap}
+.project-head .v3-cta{font-size:13px}
+[data-view="project"] .detail .section{border-color:#294b5e}[data-view="project"] .detail .section h3{font-size:21px}
+.wiring-step{display:flex;align-items:flex-start;gap:10px;width:100%;text-align:left;border:1px solid #3b5868;border-radius:12px;padding:11px 13px;margin:9px 0;background:#132c40;color:#d7ebf5;cursor:pointer;font-size:13px}.wiring-step:hover{border-color:#68d7d0}.wiring-step[aria-pressed="true"]{background:#153e39;border-color:#3ab59a}.wiring-step .step-tick{font-weight:900;color:#80e9d9}
+#savedHub .saved-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.v3-saved-card{background:#11253a;border:1px solid #325268;border-radius:16px;padding:18px;display:grid;gap:11px}.v3-saved-card h3{margin:0;font-size:17px}.v3-saved-card p{font-size:13px;color:#b7cfdf;margin:0}.v3-saved-card .cta-row{margin-top:4px}
+.lab-empty{padding:40px 20px;border-radius:19px;background:#11253a;border:1px dashed #395a70;text-align:center}.lab-empty h2{margin:10px 0}.lab-empty p{color:var(--muted);max-width:560px;margin:12px auto 24px}
+.savedHeader{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}.savedHeader h2{margin:0}
+.helper-strip{padding:13px 16px;background:#113a40;color:#cbf6ed;border:1px solid #296e6d;border-radius:13px;line-height:1.5;margin:14px 0;font-size:13px}
+.app .footer{border-top:1px solid #254359;margin-top:30px}
+@media(max-width:1080px){.top{gap:8px}.site-nav a{padding:10px;font-size:13px}.v3-project-grid,[data-view="explore"] .projectList{grid-template-columns:repeat(2,minmax(0,1fr))}.v3-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.home-hero{grid-template-columns:1.2fr 1fr}}
+@media(max-width:760px){.app{padding:0 14px 25px}.top{margin:0 -14px 18px;padding:10px 14px;flex-direction:column;gap:10px;align-items:stretch;position:sticky;top:0}.brand-home{padding:0}.brand-title{font-size:18px}.brand-sub{font-size:11px}.brand-mark{width:39px;height:39px;font-size:21px}.site-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.site-nav a{justify-content:center;padding:8px 4px;min-height:39px;font-size:11px;white-space:nowrap}.site-nav .nav-count{display:none}.home-hero{grid-template-columns:1fr;gap:12px}.hero-v3{min-height:260px;padding:25px}.hero-v3 h1{font-size:37px;letter-spacing:-1.5px}.hero-progress{min-height:auto;padding:19px}.progress-numeral{font-size:45px}.v3-project-grid,[data-view="explore"] .projectList{grid-template-columns:1fr}.v3-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.section-heading{align-items:start}.section-heading h2{font-size:21px}.project-head-card{grid-template-columns:1fr;padding:20px}.project-head-card .v3-visual{height:130px;order:-1}.project-head-card .v3-visual svg{height:130px}.project-nav-actions{align-items:stretch}#tabs{top:103px;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}#tabs .tab{min-height:42px;font-size:11px;padding:7px 2px}.v3-stage-foot{flex-direction:column;align-items:stretch}.v3-stage-foot .stage-actions{display:grid;grid-template-columns:1fr 1fr}.v3-cta{padding:10px 13px}#savedHub .saved-grid{grid-template-columns:1fr}.explore-intro,.saved-intro{padding:19px}.brand-sub{display:none}}
+@media(max-width:390px){.site-nav a{font-size:10px;gap:3px}#tabs .tab{font-size:10px}.v3-categories{grid-template-columns:1fr 1fr}.v3-category{padding:12px;min-height:125px}.hero-v3 h1{font-size:31px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Evitar repetir el encabezado del proyecto debajo de la nueva cabecera del taller */
+[data-view="project"] [data-panel="overview"] > section:first-child{display:none!important}
+.diagram-zoom{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 10px}.diagram-zoom button{background:#1a3c51;color:#e7f8ff;border:1px solid #4a6c7c;border-radius:10px;padding:8px 12px;font-weight:750;cursor:pointer}.diagram-zoom button:hover{background:#285269}
+
+</style>
 </head>
 <body>
 <div class="app">
@@ -383,6 +451,219 @@ $('#exportProgress').onclick=()=>downloadText('arduino-lab-mi-progreso.json',JSO
 $('#importProgress').onclick=()=>$('#progressFile').click();
 $('#progressFile').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const j=JSON.parse(await f.text());if(!Array.isArray(j.inventory)||!j.done||!Array.isArray(j.saved))throw Error('Estructura incompatible');state.inventory=new Set(j.inventory);state.done=j.done;state.saved=j.saved;state.tutorial=j.tutorial||{};localStorage.setItem('ak_inventory',JSON.stringify([...state.inventory]));localStorage.setItem('ak_done',JSON.stringify(state.done));localStorage.setItem('ak_saved',JSON.stringify(state.saved));localStorage.setItem('ak_tutorial',JSON.stringify(state.tutorial));populateInventoryRefresh();renderList();renderDetail();toast('Avance recuperado ✓');}catch(err){alert('No se pudo importar: '+err.message);}e.target.value='';});
 populateFilters(); renderList(); renderDetail(); updateStats();
+</script>
+<script id="ui-v3-app">
+/* Arduino Lab Kids V3 — navegación, inicio y recorrido educativo.
+   Mejora no destructiva: se conserva PROJECTS, desafíos, sketches y localStorage de V2. */
+(() => {
+'use strict';
+const ROUTES = ['home','explore','project','saved'];
+const STAGES = ['overview','wiring','code','simulate','learn','challenges','checker'];
+const STAGE_NAMES = ['Conocer','Conectar','Programar','Simular','Entender','Inventar','Verificar'];
+const stageShort = ['Proyecto','Conexiones','Código','Simular','Entender','Modificar','Chequear'];
+const MAIN = document.querySelector('.app');
+const $v = s => document.querySelector(s);
+const escapeHtml = typeof esc === 'function' ? esc : v => String(v);
+const origActivateTab = activateTab;
+const origRenderDetail = renderDetail;
+const origDiagramFor = diagramFor;
+const origWokwiDiagram = wokwiDiagram;
+const ORIGINAL_TOTAL = PROJECTS.length;
+const initialHash = location.hash;
+let currentView = null;
+let lastRoute = '';
+const readJSON = (key,fallback) => {try {return JSON.parse(localStorage.getItem(key)) || fallback;}catch{return fallback;}};
+const writeJSON = (key,val) => {try{localStorage.setItem(key,JSON.stringify(val));}catch(e){console.warn('No se pudo guardar localmente',e);}};
+let checkedSteps = readJSON('ak_steps_v3', {});
+let recent = readJSON('ak_recent_v3', []);
+let drafts = readJSON('ak_drafts_v3', {});
+
+function iconArt(p) {
+  const k=p.type, light=k==='Luces', stepper=k==='Motores paso a paso', piezo=k==='Motores piezoeléctricos', sensor=k==='Sensores', sound=k==='Sonido', game=k==='Juegos';
+  const bg=`<defs><pattern id="circuit-grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" stroke="#709cae" stroke-width=".6" fill="none" opacity=".2"/></pattern></defs><rect width="320" height="140" rx="15" fill="url(#circuit-grid)"/>`;
+  let shape='';
+  if(p.id==='traffic') shape=`<rect x="119" y="8" width="84" height="123" rx="20" fill="#091926" stroke="#728ca3" stroke-width="5"/><circle cx="161" cy="32" r="15" fill="#fa5d6c"/><circle cx="161" cy="70" r="15" fill="#ffc759"/><circle cx="161" cy="108" r="15" fill="#51e4a6"/><path d="M120 30H45V90H28M202 108H285V52H306" stroke="#82c6d9" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+  else if(stepper) shape=`<rect x="92" y="18" width="136" height="110" rx="20" fill="#576e98" stroke="#a8cce6" stroke-width="4"/><circle cx="160" cy="73" r="48" fill="#182a42" stroke="#76e8dc" stroke-width="10"/><circle cx="160" cy="73" r="14" fill="#aecbdf"/><path d="M160 73L182 46" stroke="#a6f6e9" stroke-width="6" stroke-linecap="round"/><path d="M50 35H90M230 95H273" stroke="#8dd9e5" stroke-width="4" stroke-dasharray="6 5"/>`;
+  else if(piezo) shape=`<path d="M38 88 Q60 24 82 88 T126 88 T170 88 T214 88 T258 88" fill="none" stroke="#8fe9ec" stroke-width="7" stroke-linecap="round"/><rect x="216" y="23" width="67" height="107" rx="14" fill="#4e568a" stroke="#b5c4eb" stroke-width="4"/><circle cx="249" cy="76" r="17" fill="#1b244a" stroke="#b4a8ff" stroke-width="7"/>`;
+  else if(sensor) shape=`<rect x="104" y="35" width="113" height="78" rx="16" fill="#26627a" stroke="#6fd6e0" stroke-width="4"/><circle cx="128" cy="73" r="17" fill="#0d273a" stroke="#c1f2ff" stroke-width="5"/><circle cx="191" cy="73" r="17" fill="#0d273a" stroke="#c1f2ff" stroke-width="5"/><path d="M90 25Q45 70 90 116M230 25Q275 70 230 116" stroke="#75dfdf" stroke-width="4" fill="none"/>`;
+  else if(sound) shape=`<path d="M91 70L135 45V100L91 76H61V70H91Z" fill="#8aabf9"/><path d="M153 45Q190 70 153 101M174 25Q231 70 174 120" fill="none" stroke="#78e6d9" stroke-width="7" stroke-linecap="round"/>`;
+  else if(game) shape=`<rect x="105" y="23" width="112" height="101" rx="17" fill="#3a5187" stroke="#9fbaf2" stroke-width="4"/><circle cx="141" cy="58" r="9" fill="#80eadc"/><circle cx="180" cy="58" r="9" fill="#f8cc72"/><circle cx="141" cy="94" r="9" fill="#ee7ea5"/><circle cx="180" cy="94" r="9" fill="#80eadc"/>`;
+  else if(light) shape=`<path d="M160 28C115 28 118 90 145 101V119H175V101C205 85 205 28 160 28Z" fill="#ffc859" stroke="#fff0ad" stroke-width="5"/><rect x="146" y="120" width="28" height="9" rx="3" fill="#98b8cc"/><path d="M160 9V1M112 28L96 16M208 28L224 16M105 70H83M215 70H237" stroke="#ffd279" stroke-width="5" stroke-linecap="round"/>`;
+  else shape=`<rect x="110" y="20" width="100" height="110" rx="18" fill="#437990" stroke="#81e6e0" stroke-width="4"/><path d="M130 54H192M130 76H190M130 98H166" stroke="#d8ffff" stroke-width="6"/>`;
+  return `<div class="v3-visual" aria-hidden="true"><svg viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg">${bg}${shape}</svg></div>`;
+}
+const btnProject = (p, full=false) => `<button type="button" class="${full?'projectCard':'v3-card'}" data-open-project="${escapeHtml(p.id)}" aria-label="Abrir ${escapeHtml(p.title)}">${iconArt(p)}<div class="${full?'project-info':'v3-card-body'}"><div class="${full?'pcTop':'v3-card-heading'}"><b class="${full?'pcTitle':''}">${escapeHtml(p.title)}</b></div><div class="${full?'pcDesc':'tiny'}">${escapeHtml(p.desc)}</div><div class="v3-mini-tags"><span>${escapeHtml(p.difficulty)}</span><span>${escapeHtml(p.time)}</span><span>${p.simMode==='piezo-logic'?'Simulación de mando':escapeHtml(p.type)}</span></div>${full?'<div class="pc-action">Abrir taller <span aria-hidden="true">→</span></div>':''}</div></button>`;
+function navigate(route){ const next='#'+route; if(location.hash===next) {drawRoute();return;} location.hash=route; }
+function projectRoute(id,stage='overview'){return `proyecto/${encodeURIComponent(id)}/${stage}`;}
+function parseRoute(){const r=decodeURIComponent((location.hash||'#inicio').slice(1)).split('/');if(r[0]==='proyecto')return {view:'project',id:r[1],stage:STAGES.includes(r[2])?r[2]:'overview'}; if(r[0]==='explorar')return{view:'explore'};if(r[0]==='inventos')return{view:'saved'};return{view:'home'};}
+const numDone = () => Object.values(state.done).reduce((n,arr)=>n+(Array.isArray(arr)?arr.length:0),0);
+const numChallenges = () => PROJECTS.reduce((n,p)=>n+p.challenges.length,0);
+function completeCount(p){return (state.done[p.id]||[]).length;}
+function makeHomepage(){
+  const num=numDone(), total=numChallenges(), percentage=Math.round(num/total*100);
+  const last=PROJECTS.find(p=>p.id===recent[0]) || PROJECTS[0];
+  const starters=PROJECTS.filter(p=>p.difficulty==='Fácil').slice(0,6);
+  const categories=[['Luces','💡','Aprendé con luces'],['Sensores','📡','Detectá tu entorno'],['Motores paso a paso','⚙️','Hacé que se mueva'],['Juegos','🎮','Programá jugando']];
+  $v('#homeView').innerHTML=`
+    <section class="home-hero"><div class="hero-v3"><span class="eyebrow">⚡ LABORATORIO DE INVENTOS · 10+ AÑOS</span><h1>Tus ideas cobran vida.</h1><p>Construí circuitos, aprendé a programar Arduino y transformá cada proyecto en un invento propio. Un paso a la vez.</p><div class="cta-row"><a class="v3-cta primary" href="#${projectRoute(last.id)}">${recent.length?'▶ Continuar mi proyecto':'🚀 Empezar mi primer proyecto'}</a><a class="v3-cta" href="#explorar">Explorar 60 proyectos →</a></div></div>
+    <div class="hero-progress"><div><span class="eyebrow">MI PROGRESO</span><div class="progress-numeral">${percentage}%</div><h2>${percentage?'¡Seguí construyendo!':'Tu aventura empieza hoy'}</h2><p>Terminaste ${num} de ${total} desafíos y guardaste ${state.saved.length} versiones.</p></div><div><div class="progressbar v3-progress"><i style="width:${percentage}%"></i></div><div class="v3-meter-note"><span>${num} desafíos</span><span>${state.saved.length} inventos guardados</span></div></div><a href="#inventos" class="text-link">Ver mis inventos →</a></div></section>
+    <section class="home-section"><div class="section-heading"><div><h2>Elegí qué querés crear</h2><p>Empezá con una idea que te entusiasme.</p></div><a class="text-link" href="#explorar">Todas las categorías →</a></div><div class="v3-categories">${categories.map(([name,em,desc])=>`<button type="button" class="v3-category" data-open-category="${escapeHtml(name)}"><span class="cat-icon">${em}</span><b>${escapeHtml(name)}</b><small>${desc}</small></button>`).join('')}</div></section>
+    <section class="home-section"><div class="section-heading"><div><h2>Para empezar hoy</h2><p>Seis proyectos ideales para dar los primeros pasos.</p></div><a href="#explorar" class="text-link">Ver los 60 →</a></div><div class="v3-project-grid">${starters.map(p=>btnProject(p)).join('')}</div></section>
+    <section class="home-section"><div class="section-heading"><div><h2>El método del laboratorio</h2><p>El mismo recorrido fácil de seguir en cada proyecto.</p></div></div><div class="v3-categories"><div class="v3-category" style="cursor:default"><span class="cat-icon">🔧</span><b>1. Construir</b><small>Conectá componentes con instrucciones claras</small></div><div class="v3-category" style="cursor:default"><span class="cat-icon">💻</span><b>2. Programar</b><small>Copiá el sketch y probalo</small></div><div class="v3-category" style="cursor:default"><span class="cat-icon">🧠</span><b>3. Entender</b><small>Descubrí por qué funciona</small></div><div class="v3-category" style="cursor:default"><span class="cat-icon">✨</span><b>4. Inventar</b><small>Resolvé desafíos y guardá tus versiones</small></div></div></section>`;
+  bindNewOpeners($v('#homeView'));
+}
+function bindNewOpeners(root=document){
+  root.querySelectorAll('[data-open-project]').forEach(el=>el.addEventListener('click',()=>navigate(projectRoute(el.dataset.openProject))));
+  root.querySelectorAll('[data-open-category]').forEach(el=>el.addEventListener('click',()=>{$v('#typeFilter').value=el.dataset.openCategory;navigate('explorar');}));
+}
+function makeSavedHub(){
+ const out=$v('#savedHub');const items=state.saved;
+ out.innerHTML=`<section class="saved-intro"><div class="crumbs"><a href="#inicio">Inicio</a><span aria-hidden="true">›</span><span aria-current="page">Mis inventos</span></div><h1>Mis inventos</h1><p>Tus versiones modificadas, guardadas en este navegador. Podés abrirlas en el editor, descargarlas o exportar una copia del progreso.</p></section>
+ <div class="savedHeader"><button type="button" class="v3-cta" id="v3Export">↓ Exportar mi progreso</button><button type="button" class="v3-cta" id="v3Import">↑ Recuperar progreso</button><span class="muted">${items.length} ${items.length===1?'versión':'versiones'} guardadas</span></div>
+ ${items.length?`<div class="saved-grid">${items.map(v=>{const p=PROJECTS.find(x=>x.id===v.projectId);return `<article class="v3-saved-card"><small style="color:#8de2da">${escapeHtml(p?.type||'Proyecto')}</small><h3>${escapeHtml(v.name)}</h3><p>${escapeHtml(p?.title||v.projectId)} · ${escapeHtml(v.date||'')}</p><div class="cta-row"><button type="button" class="v3-cta primary" data-open-saved="${escapeHtml(String(v.id))}">Abrir en el editor →</button><button type="button" class="v3-cta" data-download-saved="${escapeHtml(String(v.id))}">↓ Descargar .ino</button></div></article>`}).join('')}</div>`:`<div class="lab-empty"><div style="font-size:50px">🧪</div><h2>Todavía no guardaste inventos</h2><p>Abrí un proyecto, entrá en «Modificar» y «Chequear», cambiá el programa y guardá tu primera versión.</p><a href="#explorar" class="v3-cta primary">Elegir mi primer proyecto →</a></div>`}`;
+ $v('#v3Export').onclick=()=> $v('#exportProgress')?.click(); $v('#v3Import').onclick=()=> $v('#importProgress')?.click();
+ out.querySelectorAll('[data-download-saved]').forEach(el=>el.onclick=()=>{const v=state.saved.find(v=>String(v.id)===el.dataset.downloadSaved);if(v)downloadText((v.name||'mi-invento').replace(/[^a-z0-9-_]/gi,'_')+'.ino',v.code,'text/plain');});
+ out.querySelectorAll('[data-open-saved]').forEach(el=>el.onclick=()=>{const v=state.saved.find(v=>String(v.id)===el.dataset.openSaved);if(!v)return;sessionStorage.setItem('ak_open_version_v3',String(v.id));navigate(projectRoute(v.projectId,'checker'));});
+}
+function setRecent(id){recent=[id,...recent.filter(x=>x!==id)].slice(0,12);writeJSON('ak_recent_v3',recent);}
+function renderExploreIntro(){
+ const a=$v('#exploreIntro');
+ a.innerHTML=`<div class="crumbs"><a href="#inicio">Inicio</a><span aria-hidden="true">›</span><span aria-current="page">Explorar</span></div><h1>Explorá los 60 proyectos</h1><p>Buscá por dificultad, tipo o componentes y elegí tu próxima aventura.</p>`;
+}
+function drawRoute(){
+ const r=parseRoute();const changing=currentView!==r.view;
+ currentView=r.view;MAIN.dataset.view=r.view;
+ $v('#homeView').hidden=r.view!=='home';$v('#savedHub').hidden=r.view!=='saved';
+ document.querySelectorAll('.site-nav a').forEach(a=>{const current=(a.dataset.view===r.view);if(current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+ if(r.view==='home')makeHomepage();
+ if(r.view==='explore'){renderList();}
+ if(r.view==='saved')makeSavedHub();
+ if(r.view==='project'){
+  const p=PROJECTS.find(x=>x.id===r.id);if(!p){navigate('explorar');return;}
+  const changed=state.selected!==p.id || changing;
+  state.selected=p.id;setRecent(p.id);
+  if(changed)renderDetail();
+  showStage(r.stage,false);
+  const openSaved=sessionStorage.getItem('ak_open_version_v3');
+  if(openSaved && r.stage==='checker'){
+   const v=state.saved.find(x=>String(x.id)===openSaved&&x.projectId===p.id);
+   if(v){const el=$v('#codeEditor');if(el){el.value=v.code;runChecker(v.code,p);}}sessionStorage.removeItem('ak_open_version_v3');
+  }
+ }
+ if(changing||lastRoute!==location.hash){window.scrollTo({top:0,behavior:'instant'});}
+ lastRoute=location.hash;
+}
+
+function diagramTraffic(){
+ const rows=[{n:'D8',color:'#f16171',name:'Rojo',y:130},{n:'D9',color:'#ffd06a',name:'Amarillo',y:218},{n:'D10',color:'#4fd4a3',name:'Verde',y:306}];
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 438" role="img" aria-label="Esquema de semáforo: D8 LED rojo, D9 LED amarillo y D10 LED verde; cada LED conectado mediante una resistencia de 220 ohmios a tierra GND">
+ <rect width="940" height="438" rx="14" fill="#f4f8fc"/><rect x="24" y="74" width="247" height="291" rx="23" fill="#13748b" stroke="#10526d" stroke-width="5"/><text x="148" y="119" font-size="27" font-weight="800" fill="#fff" text-anchor="middle">ARDUINO UNO</text><text x="149" y="142" font-size="13" fill="#d5f6fb" text-anchor="middle">Pines digitales</text>
+ <rect x="418" y="53" width="492" height="332" rx="19" fill="#fff" stroke="#c9d5e2" stroke-width="4"/><text x="664" y="86" text-anchor="middle" font-size="21" font-weight="800" fill="#263b53">PROTOBOARD · ESQUEMA</text><path d="M437 343H883" stroke="#315a73" stroke-width="6" stroke-linecap="round"/><text x="826" y="365" font-size="16" fill="#355b74">GND (–)</text>
+ ${rows.map(r=>`<rect x="225" y="${r.y-18}" width="32" height="35" rx="8" fill="#07526a"/><text x="199" y="${r.y+5}" text-anchor="end" font-size="17" font-weight="800" fill="#eaf9ff">${r.n}</text><circle cx="255" cy="${r.y}" r="8" fill="#b9f8f1"/><path d="M263 ${r.y}H486V${r.y}" stroke="${r.color}" stroke-width="6" fill="none"/><circle cx="486" cy="${r.y}" r="7" fill="${r.color}"/><path d="M486 ${r.y}H542" stroke="${r.color}" stroke-width="6"/><path d="M542 ${r.y}h24" stroke="#2d425a" stroke-width="4"/><circle cx="583" cy="${r.y}" r="21" stroke="#617c98" stroke-width="4" fill="${r.color}"/><text x="583" y="${r.y+36}" font-size="13" text-anchor="middle" font-weight="800" fill="#334d68">${r.name}</text><path d="M604 ${r.y}H663" stroke="#465e72" stroke-width="4"/><rect x="663" y="${r.y-11}" width="75" height="23" rx="5" fill="#e9cb92" stroke="#8a6b3c" stroke-width="3"/><path d="M738 ${r.y}H773V343" stroke="#465e72" stroke-width="4" fill="none"/><text x="700" y="${r.y-17}" text-anchor="middle" font-size="13" font-weight="700" fill="#604e36">220 Ω</text>`).join('')}
+ <path d="M773 343V404H148V360" stroke="#34576b" stroke-width="5" fill="none"/><circle cx="148" cy="360" r="8" fill="#ecf4ff"/><text x="147" y="337" fill="#fff" font-size="19" font-weight="800" text-anchor="middle">GND</text><text x="20" y="31" fill="#254864" font-size="17" font-weight="800">Conexiones del semáforo · una resistencia por cada LED</text><text x="20" y="425" fill="#456177" font-size="12">Esquema educativo, no disposición física exacta. Verificá polaridad: ánodo (+) hacia pin digital, cátodo (–) hacia resistencia y GND.</text></svg>`;
+}
+diagramFor=function(p){if(p.id==='traffic')return diagramTraffic();return origDiagramFor(p);};
+wokwiDiagram=function(p){
+ if(p.id!=='traffic' && p.id!=='blink')return origWokwiDiagram(p);
+ const uno={type:'wokwi-arduino-uno',id:'uno',top:10,left:20,attrs:{}};
+ const rows=p.id==='traffic'? [['red','8'],['yellow','9'],['green','10']] : [['red','8']];
+ const parts=[uno],connections=[];
+ rows.forEach(([color,pin],idx)=>{let top=10+idx*140,led='led'+idx,res='res'+idx;parts.push({type:'wokwi-led',id:led,top:top,left:510,attrs:{color}},{type:'wokwi-resistor',id:res,top:top,left:360,attrs:{value:'220'}});connections.push([`uno:${pin}`,`${res}:1`,color,[]],[`${res}:2`,`${led}:A`,color,[]],[`${led}:C`,'uno:GND.1','black',[]]);});
+ return {version:1,author:'Arduino Lab Kids V3',editor:'wokwi',parts,connections};
+};
+function renderStepChecks(p){
+ const rows=document.querySelectorAll('[data-panel="wiring"] .step');
+ rows.forEach((el,i)=>{
+  if(el.querySelector('.wiring-step'))return;
+  const done=(checkedSteps[p.id]||[]).includes(i);
+  const check=document.createElement('button');check.type='button';check.className='wiring-step';check.dataset.step=String(i);check.setAttribute('aria-pressed',String(done));check.innerHTML=`<span class="step-tick">${done?'✓':'○'}</span><span>${done?'Paso conectado · tocar para desmarcar':'Marcar este paso como realizado'}</span>`;
+  check.addEventListener('click',()=>{const set=new Set(checkedSteps[p.id]||[]);if(set.has(i))set.delete(i);else set.add(i);checkedSteps[p.id]=[...set];writeJSON('ak_steps_v3',checkedSteps);const isDone=set.has(i);check.setAttribute('aria-pressed',String(isDone));check.querySelector('.step-tick').textContent=isDone?'✓':'○';check.lastElementChild.textContent=isDone?'Paso conectado · tocar para desmarcar':'Marcar este paso como realizado';updateStageFooter();});
+  el.after(check);
+ });
+}
+function enhanceDiagramZoom(){
+ const wrap=document.querySelector('[data-panel="wiring"] .diagramWrap');
+ const svg=wrap?.querySelector('svg');if(!wrap||!svg)return;
+ let percent=100,fit=false;
+ const tools=document.createElement('div');tools.className='diagram-zoom';
+ tools.innerHTML='<strong style="font-size:13px;color:#bfe6ee;margin-right:6px">🔍 Ver conexiones</strong><button type="button" data-zoom="out" aria-label="Reducir diagrama">− Reducir</button><button type="button" data-zoom="in" aria-label="Ampliar diagrama">+ Ampliar</button><button type="button" data-zoom="fit">Ajustar a pantalla</button><button type="button" data-zoom="reset">Restablecer</button>';
+ wrap.before(tools);
+ tools.querySelectorAll('[data-zoom]').forEach(b=>b.onclick=()=>{
+  const cmd=b.dataset.zoom;
+  if(cmd==='fit'){fit=true;percent=100;}else if(cmd==='reset'){fit=false;percent=100;}else{fit=false;percent=Math.max(70,Math.min(180,percent+(cmd==='in'?20:-20)));}
+  svg.style.minWidth=fit?'0':`${Math.round(680*percent/100)}px`;
+  svg.style.width=fit?'100%':`${percent}%`;
+ });
+}
+function applyWorkBench(){
+ const p=PROJECTS.find(x=>x.id===state.selected);
+ const detail=$v('.detail');if(!p)return;
+ const old=detail.querySelector('.project-head');if(old)old.remove();
+ const head=document.createElement('div');head.className='project-head';
+ head.innerHTML=`<nav class="crumbs" aria-label="Ruta de navegación"><a href="#inicio">Inicio</a><span aria-hidden="true">›</span><a href="#explorar">Explorar proyectos</a><span aria-hidden="true">›</span><span aria-current="page">${escapeHtml(p.title)}</span></nav>
+ <div class="project-nav-actions"><a href="#explorar" class="v3-cta">← Volver a proyectos</a><a href="#inventos" class="v3-cta">☆ Mis inventos</a></div>
+ <div class="project-head-card"><div><span class="eyebrow">🛠️ TALLER DE CONSTRUCCIÓN</span><h1>${escapeHtml(p.title)}</h1><p>${escapeHtml(p.desc)}</p><div class="meta-line" style="margin-top:16px"><span class="m-tag">${escapeHtml(p.difficulty)}</span><span class="m-tag">${escapeHtml(p.time)}</span><span class="m-tag">${escapeHtml(p.type)}</span><span class="m-tag">${p.challenges.length} desafíos</span></div></div>${iconArt(p)}</div>`;
+ detail.prepend(head);
+ const prev=detail.querySelector('.v3-stage-foot');if(prev)prev.remove();
+ const nav=document.createElement('div');nav.className='v3-stage-foot';nav.innerHTML=`<strong id="stageContext">Paso 1 de 7</strong><div class="stage-actions"><button type="button" class="v3-cta" id="stagePrev">← Anterior</button><button type="button" class="v3-cta primary" id="stageNext">Siguiente →</button></div>`;
+ detail.appendChild(nav);
+ $v('#stagePrev').onclick=()=>{const n=STAGES.indexOf(activeStage);if(n>0)showStage(STAGES[n-1],true);};
+ $v('#stageNext').onclick=()=>{const n=STAGES.indexOf(activeStage);if(n<STAGES.length-1)showStage(STAGES[n+1],true);else navigate('inventos');};
+ $v('#tabs').setAttribute('role','tablist');$v('#tabs').setAttribute('aria-label','Pasos del proyecto');
+ document.querySelectorAll('#tabs .tab').forEach((b,i)=>{if(i<7){b.textContent=`${i+1}. ${stageShort[i]}`;b.setAttribute('role','tab');}});
+ $v('#tabs').addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft','Home','End'].includes(e.key))return; const n=STAGES.indexOf(activeStage);const next=e.key==='ArrowRight'?(n+1)%7:e.key==='ArrowLeft'?(n+6)%7:e.key==='Home'?0:6;e.preventDefault();showStage(STAGES[next],true);document.querySelector(`#tabs [data-tab="${STAGES[next]}"]`)?.focus();},{signal:pageAbort.signal});
+ renderStepChecks(p);
+ enhanceDiagramZoom();
+ const wrap=document.querySelector('[data-panel="simulate"] .buttonrow');
+ if(wrap && (p.id==='traffic'||p.id==='blink')){
+  const link=document.createElement('div');link.className='helper-strip';link.innerHTML='✅ Este proyecto incluye conexiones compatibles con Wokwi. Copiá el código y el diagrama para simular el circuito completo.';
+  wrap.after(link);
+  const button=document.createElement('button');button.className='btn';button.type='button';button.textContent='↓ Descargar diagrama Wokwi';button.onclick=()=>downloadText('diagram.json',JSON.stringify(wokwiDiagram(p),null,2),'application/json');wrap.append(button);
+ }
+ const ed=$v('#codeEditor');if(ed){if(drafts[p.id] && !sessionStorage.getItem('ak_open_version_v3'))ed.value=drafts[p.id]; ed.addEventListener('input',()=>{drafts[p.id]=ed.value;writeJSON('ak_drafts_v3',drafts);});}
+}
+let activeStage='overview',pageAbort=new AbortController();
+renderDetail=function(){pageAbort.abort();pageAbort=new AbortController();origRenderDetail();applyWorkBench();};
+activateTab=function(stage){if(stage==='saved'){navigate('inventos');return;}showStage(stage,true);};
+function updateStageFooter(){const n=STAGES.indexOf(activeStage);const p=PROJECTS.find(x=>x.id===state.selected);if(!p)return;
+ const label=$v('#stageContext');if(label)label.textContent=`Paso ${n+1} de 7 · ${STAGE_NAMES[n]}${activeStage==='wiring'?' · '+(checkedSteps[p.id]||[]).length+'/'+p.steps.length+' tareas marcadas':''}`;
+ const prev=$v('#stagePrev'),next=$v('#stageNext');if(prev)prev.disabled=n===0;if(next)next.textContent=n===6?'Ir a Mis inventos →':`Siguiente: ${STAGE_NAMES[n+1]} →`;
+ document.querySelectorAll('#tabs .tab').forEach(b=>{const current=b.dataset.tab===activeStage;b.setAttribute('aria-selected',String(current));b.setAttribute('tabindex',current?'0':'-1');});
+}
+function showStage(stage,updateHash){if(!STAGES.includes(stage))stage='overview';activeStage=stage;
+ // Usamos el comportamiento original para mantener los paneles y sus controles.
+ origActivateTab(stage);
+ if(updateHash && currentView==='project'){
+  const target='#'+projectRoute(state.selected,stage);
+  if(location.hash!==target)history.replaceState(null,'',target);
+ }
+ updateStageFooter();
+}
+renderList=function(){const list=filtered();$v('#countLabel').textContent=`${list.length} de ${ORIGINAL_TOTAL}`;const root=$v('#projectList');root.innerHTML=list.length?list.map(p=>btnProject(p,true)).join(''):`<div class="empty"><h3>No encontramos proyectos</h3><p>Probá quitar algún filtro o elegir otro componente.</p><button type="button" class="v3-cta" id="v3ClearFilters">Limpiar filtros</button></div>`;
+ bindNewOpeners(root);
+ $v('#v3ClearFilters')?.addEventListener('click',()=>{['search','typeFilter','difficultyFilter','componentFilter'].forEach(id=>$v('#'+id).value='');renderList();});
+};
+// Reconstruir la cabecera con convenciones web conocidas y navegación persistente.
+const header=$v('.top');
+header.innerHTML=`<a class="brand-home" href="#inicio" aria-label="Arduino Lab Kids, ir a Inicio"><span class="brand-mark">⚡</span><span><span class="brand-title">Arduino Lab Kids</span><span class="brand-sub">Aprender electrónica inventando</span></span></a><nav class="site-nav" aria-label="Navegación principal"><a href="#inicio" data-view="home">⌂ Inicio</a><a href="#explorar" data-view="explore">▦ Explorar <span class="nav-count">60</span></a><a href="#${projectRoute(recent[0]||PROJECTS[0].id)}" data-view="project" id="navTaller">⚒ Taller</a><a href="#inventos" data-view="saved">☆ Mis inventos</a></nav>`;
+const skip=document.createElement('a');skip.className='skip-link';skip.href='#homeView';skip.textContent='Saltar al contenido';document.body.prepend(skip);
+const home=document.createElement('div');home.id='homeView';home.setAttribute('aria-label','Inicio del laboratorio');header.after(home);
+const saved=document.createElement('div');saved.id='savedHub';saved.setAttribute('aria-label','Mis inventos');home.after(saved);
+skip.addEventListener('click',e=>{e.preventDefault();const target=currentView==='explore'?$v('#exploreIntro'):currentView==='saved'?saved:currentView==='project'?$v('.detail'):home;target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'smooth'});});
+const intro=document.createElement('section');intro.id='exploreIntro';intro.className='explore-intro';saved.after(intro);
+const quick=document.querySelector('[data-quicktype]')?.parentElement;if(quick)quick.classList.add('quickrow');
+// Mover los controles de importación existentes fuera de las vistas ocultas: los botones nuevos los activan.
+const bar=$v('#exportProgress')?.parentElement;if(bar){const storage= document.createElement('div');storage.id='legacyBackupControls';storage.hidden=true;storage.append($v('#exportProgress'),$v('#importProgress'),$v('#progressFile'));document.body.append(storage);}
+const sims=$v('#simulatorsHome'); if(sims){const link=document.createElement('div');link.className='helper-strip';link.innerHTML='Wokwi y Tinkercad son servicios externos. Los 60 proyectos incluyen código, pero solo algunos tienen diagramas de simulación listos para pegar. Revisá la pestaña «Simular» de cada proyecto.';sims.prepend(link);}
+renderExploreIntro();
+window.addEventListener('hashchange',drawRoute);
+// Mantener navegación original y compatibilidad con enlaces anteriores.
+if(!initialHash)history.replaceState(null,'','#inicio');
+renderList();drawRoute();
+// Actualizar el acceso rápido a Taller al navegar por cualquier proyecto.
+window.addEventListener('hashchange',()=>{$v('#navTaller').href='#'+projectRoute(recent[0]||PROJECTS[0].id);});
+})();
+
 </script>
 </body>
 </html>
